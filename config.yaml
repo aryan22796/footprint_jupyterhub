@@ -1,0 +1,48 @@
+# Copyright (c) Rubikon Labs Team.
+
+# Use this file to set default values for configuration variables 
+# specified in jupyter configuration file.  
+# Using the yaml module, the configs will be substitute by these configuration variables.
+
+# Fargate spawner AWS Configs
+FARGATESPAWNER_AWS_REGION: us-east-1
+FARGATESPAWNER_AWS_ECS_HOST: ecs.us-east-1.amazonaws.com
+
+# Custer name in which the tasks will be running
+CLUSTER_NAME: test-jupyter
+
+# The task definition for running in the cluster
+CLUSTER_TASK_DEFINITION: test-jupyter:19
+
+# Network configuration for the Fargate and aws vpc Configurations
+# NOTE: Can have multiple Security Groups and Subnets in the list
+ASSIGN_PUBLIC_IP: ENABLED
+SECURITY_GROUPS: 
+  - sg-05b08d4321e44c8a3
+SUBNETS: 
+  - subnet-385e8a19
+PLATFORM_VERSION: 1.4.0
+
+# Logo File Name that will be assigned to the JupyterHub Dashboard Logo
+LOGO_FILE_NAME: logo.png
+
+## The ip or hostname for proxies and spawners to use for connecting to the Hub.
+# Instance/ECS IP address where the Docker container is running.
+# Keep the private IP address
+HUB_CONNECT_IP: 172.31.81.192
+
+# Max users that can use the server
+MAX_NUMBER_OF_USERS: 10
+
+# DATABSE CONFIGS
+RDS_SQL_DB_USERNAME: admin
+RDS_SQL_DB_PASSWORD: Bk5RIt2wiqzPH5rNqQhB
+RDS_SQL_DB_ENDPOINT: jupyter-hub-database.clvep70ziamx.us-east-1.rds.amazonaws.com
+RDS_SQL_DB_PORT: 3306
+RDS_SQL_DB_NAME: jupyterhub_test
+
+# Proxy server configs
+# Private IP of the machine
+# Don't chnage the port. It should be 8001
+HTTP_PROXY_API_URL : http://172.31.81.192:8001
+HTTP_PROXY_AUTH_TOKEN : eyJhY2NvdW50SWQiOjI0Mjk1LCJ1c2VyVHlwZSI6ImFkbWluIiwiZW1haWwiOiJzYWJpaGF0QGtvY

@@ -1,0 +1,38 @@
+# Copyright (c) Rubikon Labs Team.
+# JupyterHub docker-compose configuration file
+
+# Using the latest version available
+version: "3.8"
+
+# Creating the services
+services:
+
+  # The proxy service creates a proxy that will run independent of the JupyterHub server
+  # More details : https://jupyterhub.readthedocs.io/en/stable/reference/separate-proxy.html
+  proxy:
+    image: jupyterhub/configurable-http-proxy:4.2.2
+    container_name: proxy
+    restart: always
+    network_mode: host
+    environment: 
+      CONFIGPROXY_AUTH_TOKEN: "eyJhY2NvdW50SWQiOjI0Mjk1LCJ1c2VyVHlwZSI6ImFkbWluIiwiZW1haWwiOiJzYWJpaGF0QGtvY"
+    command: >
+      configurable-http-proxy
+      --ip 0.0.0.0
+      --api-ip 0.0.0.0
+      --log-level debug
+      --default-target http://ip:8081 
+      --error-target http://ip:8081/hub/error
+
+  # The jupyterlab service
+  jupyterlab:
+    build: .
+    image: jupyterhub_fargate
+    container_name: jupyterhub_fargate
+    restart: always
+    network_mode: host
+    environment: 
+      GRANT_SUDO: "yes"
+    user: root
+    depends_on:
+      - proxy
