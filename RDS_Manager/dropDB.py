@@ -8,11 +8,11 @@ This file is used for drop a db from the RDS database and re-create the same dat
 import pymysql
 
 # RDS DB Credentials
-ENDPOINT="jupyter-hub-database.clvep70ziamx.us-east-1.rds.amazonaws.com"
+ENDPOINT="footprint.cufclga4hs85.us-east-1.rds.amazonaws.com"
 PORT=3306
 USR="admin"
 REGION="us-east-1"
-password="Bk5RIt2wiqzPH5rNqQhB"
+password="footprint"
 DBNAME="jupyterhub_test"
 
 # Try for catching errors if any

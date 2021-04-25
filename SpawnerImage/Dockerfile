@@ -1,7 +1,7 @@
 # Copyright (c) Rubikon Labs Team.
 
 # Install the JupyterHub images from the Docker-Hub
-FROM jupyter/scipy-notebook:5cb007f03275
+FROM jupyter/scipy-notebook:fbc8a85e641b
 
 # Switch to root user
 USER root

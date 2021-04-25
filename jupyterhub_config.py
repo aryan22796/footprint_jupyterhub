@@ -1,5 +1,5 @@
 """
-Copyright (c) Rubikon Labs Team.
+Copyright (c) Footprint  Team.
 
 This is the Configuration file that has all the required configurations 
 used by the JupyterHub Server. We are using the FargateSpawner class to
@@ -44,7 +44,7 @@ c.FargateSpawner.authentication_class = FargateSpawnerEC2InstanceProfileAuthenti
 # ===== Native authenticator =====
 c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
 c.JupyterHub.admin_access = True
-c.NativeAuthenticator.admin_users = set(["admin", "manas"])
+c.NativeAuthenticator.admin_users = set(["admin", "daniel"])
 c.Authenticator.enable_signup = True
 c.Authenticator.allowed_failed_logins = 3
 c.Authenticator.seconds_before_next_try = 600

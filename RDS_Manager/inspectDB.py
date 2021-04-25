@@ -1,5 +1,5 @@
 """
-Copyright (c) Rubikon Labs Team.
+Copyright (c) FootPrintTeam.
 
 This file is used for making a SQL query to the selected RDS database
 """
@@ -7,11 +7,11 @@ This file is used for making a SQL query to the selected RDS database
 import pymysql
 
 # RDS DB Credentials
-ENDPOINT="jupyter-hub-database.clvep70ziamx.us-east-1.rds.amazonaws.com"
+ENDPOINT="footprint.cufclga4hs85.us-east-1.rds.amazonaws.com"
 PORT=3306
 USR="admin"
 REGION="us-east-1"
-password="Bk5RIt2wiqzPH5rNqQhB"
+password="footprint"
 DBNAME="jupyterhub_test"
 
 try:

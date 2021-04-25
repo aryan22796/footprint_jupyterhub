@@ -1,4 +1,4 @@
-# Copyright (c) Rubikon Labs Team.
+# Copyright (c) footPrint Team.
 
 # Install the JupyterHub images from the Docker-Hub
 FROM jupyterhub/jupyterhub:1.3
